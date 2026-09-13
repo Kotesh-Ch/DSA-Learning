@@ -18,8 +18,8 @@ class Solution {
             for(List<Integer> l2 : list2) {
                 int dx = l2.get(0) - l1.get(0) + n;
                 int dy = l2.get(1) - l1.get(1) + n;
-
-                res = Math.max(res, ++counts[dx][dy]);
+                counts[dx][dy]++;
+                res = Math.max(res, counts[dx][dy]);
             }
         }
 
