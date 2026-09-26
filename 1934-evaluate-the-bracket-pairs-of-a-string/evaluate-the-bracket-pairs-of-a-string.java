@@ -7,7 +7,7 @@ class Solution {
             map.put(list.get(0), list.get(1));
         }
         for(int i = 0; i < s.length(); i++) {
-            if(s.charAt(i) != '(' && s.charAt(i) != ')') {res.append(s.charAt(i));}
+            // if(s.charAt(i) != '(' && s.charAt(i) != ')') {res.append(s.charAt(i));}
             if(s.charAt(i) == '(') {
                 String temp = "";
                 while(s.charAt(i+1) != ')') {
@@ -16,7 +16,7 @@ class Solution {
                 }
                 i++;
                 res.append(map.getOrDefault(temp, "?"));
-            }
+            } else {res.append(s.charAt(i));}
         }
 
         return res.toString();
