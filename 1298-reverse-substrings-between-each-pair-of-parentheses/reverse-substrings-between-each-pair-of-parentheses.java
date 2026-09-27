@@ -4,14 +4,16 @@ class Solution {
         Stack<Integer> stack = new Stack<>();
 
         for(int i = 0; i < s.length(); i++) {
-            if(s.charAt(i) == '(') {
+            char ch = s.charAt(i);
+
+            if(ch == '(') {
                 stack.push(res.length());
-            } else if(s.charAt(i) == ')') {
-                int start = stack.pop();
-                int end = res.length() - 1;
-                reverseString(res, start, end);
+            } else if(ch == ')') {
+                int left = stack.pop();
+                int right = res.length() - 1;
+                reverseString(res, left, right);
             } else {
-                res.append(s.charAt(i));
+                res.append(ch);
             }
         }
 
