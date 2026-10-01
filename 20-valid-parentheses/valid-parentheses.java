@@ -11,9 +11,8 @@ class Solution {
                 stack.push(ch);
             } else {
                 if(stack.isEmpty()) {return false;}
-
-                if(map.get(ch) != stack.peek()) {return false;}
-                stack.pop();
+                char bracket = stack.pop();
+                if(map.get(ch) != bracket) {return false;}
             }
         }
 
